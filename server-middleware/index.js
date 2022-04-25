@@ -8,7 +8,7 @@ app.use(cookieParser())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(logger('tiny'))
-app.use('/api', require('./api/routerIndex'))
+app.use('/api', require('./api/routerIndex.js'))
 app.all('/api/**',  (req, res, next) => {
     next(createError(404))
 })
